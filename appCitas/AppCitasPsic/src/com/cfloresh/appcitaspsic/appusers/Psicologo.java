@@ -34,7 +34,7 @@ public class Psicologo extends Usuario {
 
     @Override
     public String toString() {
-        return "Nombre: " + this.nombre + " " + this.apellido
+        return "\nNombre: " + this.nombre + " " + this.apellido
                 + "\nLocalidad: " + this.localidad
                 + "\nEnfoque: " + this.enfoque.getTextValue()
                 + "\nAreas de experiencia: " + this.areasDeExp.getTextValue();

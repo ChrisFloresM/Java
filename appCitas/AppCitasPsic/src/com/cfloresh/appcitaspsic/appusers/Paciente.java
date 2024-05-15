@@ -66,4 +66,11 @@ public class Paciente extends Usuario{
 
         System.out.println("Valor actualizado con exito");
     }
+
+    @Override
+    public String toString() {
+        return "\nNombre: " + this.nombre + " " + this.apellido
+                + "\nLocalidad: " + this.localidad
+                + "\nRazon de la consulta: " + this.razonDeConsulta;
+    }
 }

@@ -2,16 +2,25 @@ package com.cfloresh.appcitaspsic;
 
 import com.cfloresh.appcitaspsic.appusers.Paciente;
 import com.cfloresh.appcitaspsic.appusers.Psicologo;
-import com.cfloresh.appcitaspsic.enums.Enfoque;
-import com.cfloresh.appcitaspsic.enums.RazonConsulta;
+import com.cfloresh.appcitaspsic.menus.MenuInicio;
+
+import java.util.ArrayList;
 
 public class TestConsultas {
 
     public static void main(String[] args) {
 
-        Psicologo personal[] = new Psicologo[3];
+        ArrayList<Psicologo> personalPsicologos = new ArrayList<>();
+        ArrayList<Paciente> listaPacientes = new ArrayList<>();
 
-        personal[0] = new Psicologo("Luis", "Martinez", "Zapopan, Jal", 35);
+        while(true) {
+            MenuInicio menuTest = new MenuInicio("Bienvenido a New Life Horizons");
+            menuTest.realizarAccion(menuTest.mostrarMenu(), listaPacientes, personalPsicologos);
+        }
+
+
+
+/*      personal[0] = new Psicologo("Luis", "Martinez", "Zapopan, Jal", 35);
         personal[0].setAreasDeExp(RazonConsulta.ANSIEDAD);
         personal[0].setEnfoque(Enfoque.COGNITIVO_CONDUCTUAL);
 
@@ -21,9 +30,9 @@ public class TestConsultas {
 
         personal[2] = new Psicologo("Luisa", "Cardona", "Merida, Yuc.", 45);
         personal[2].setAreasDeExp(RazonConsulta.PROBLEMAS_LABORALES);
-        personal[2].setEnfoque(Enfoque.SISTEMATICO);
+        personal[2].setEnfoque(Enfoque.SISTEMATICO);*/
 
-        Paciente paciente1 = new Paciente("Miguel", "Lopez", "Zapopan, Jal", 23);
+/*        Paciente paciente1 = new Paciente("Miguel", "Lopez", "Zapopan, Jal", 23);
         paciente1.setRazonDeConsulta(RazonConsulta.ANSIEDAD);
 
         for(Psicologo p : personal) {
@@ -39,7 +48,7 @@ public class TestConsultas {
         if(psicAsignado!= null) {
             System.out.println("Se le asignó el psicólogo: ");
             System.out.println(psicAsignado.toString());
-        }
+        }*/
 
     }
 }
