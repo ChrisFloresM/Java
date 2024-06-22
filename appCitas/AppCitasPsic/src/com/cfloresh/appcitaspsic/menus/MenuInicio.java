@@ -1,10 +1,7 @@
 package com.cfloresh.appcitaspsic.menus;
 
-import com.cfloresh.appcitaspsic.appusers.Paciente;
-import com.cfloresh.appcitaspsic.appusers.Psicologo;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+import com.cfloresh.appcitaspsic.repo.RepoPacientes;
+import com.cfloresh.appcitaspsic.repo.RepoPsic;
 
 public class MenuInicio extends Menu{
 
@@ -22,17 +19,22 @@ public class MenuInicio extends Menu{
     }
 
     @Override
-    public void realizarAccion(int accion, ArrayList<Paciente> pacientes, ArrayList<Psicologo> psicologos) {
+    public void realizarAccion(int accion, RepoPacientes pacientes, RepoPsic psicologos) {
 
         switch(accion) {
             case 1 -> {
                 MenuNuevoUsuario menuNuevoUsuario = new MenuNuevoUsuario("¿Es un psicólogo o un paciente? ");
                 menuNuevoUsuario.realizarAccion(menuNuevoUsuario.mostrarMenu(), pacientes, psicologos);
-            }  // Preguntar si es un psicólogo o un paciente;
+            }
             case 2 -> System.out.println("Usted seleccionó: Usuario existente");
             case 3 -> {
-                pacientes.forEach(System.out::println);
-                psicologos.forEach(System.out::println);
+
+                System.out.println("\nPacientes:");
+                pacientes.getPacientes().forEach(System.out::println);
+
+                System.out.println("\nPsicologos:");
+                psicologos.getPsicologos().forEach(System.out::println);
+
                 System.exit(0);
             }
         }

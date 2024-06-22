@@ -3,6 +3,8 @@ package com.cfloresh.appcitaspsic.menus;
 import com.cfloresh.appcitaspsic.appusers.Paciente;
 import com.cfloresh.appcitaspsic.appusers.Psicologo;
 import com.cfloresh.appcitaspsic.appusers.Usuario;
+import com.cfloresh.appcitaspsic.repo.RepoPacientes;
+import com.cfloresh.appcitaspsic.repo.RepoPsic;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -32,7 +34,7 @@ abstract public class Menu implements RealizarAccion{
         return userInput;
     }
 
-    public void realizarAccion(int accion, ArrayList<Paciente> pacientes, ArrayList<Psicologo> psicologos){
+    public void realizarAccion(int accion, RepoPacientes pacientes, RepoPsic psicologos){
         System.out.println("Default menu action");
     }
 
